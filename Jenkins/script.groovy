@@ -1,4 +1,4 @@
-def buildImage{
+def buildImage() {
     
     echo 'Building Frontend image'
                     
@@ -12,7 +12,7 @@ def buildImage{
         }                       
 }
 
-def deployApp{
+def deployApp(){
     echo "Building Frontend Image"
 
 }
