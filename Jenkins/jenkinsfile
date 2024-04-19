@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    stages {
+        stage('build image') {
+            steps {
+                script{
+                    echo 'Building Frontend image'
+                    
+                    withCredentials([usernamePassword(
+                        credentialsId:'Dockerhub', passwordVariable:'dockerhubPass', usernameVariable:'dockerhubUser')]){
+
+                            //sh 'docker build -t omartarekabdelall/todo-list-app:frontend-jenkins ./Frontend'
+                            sh "echo $dockerhubPass | docker login -u $dockerhubUser --password-stdin"
+                            sh "docker pull omartarekabdelall/todo-list-app:frontend"
+                        }
+                        
+
+                            
+                       
+                       
+                }
+            }
+        }
+
+        stage('deploy')
+        {
+            steps {
+                script{
+                     echo 'hello 2'
+                }
+            }
+        }
+    }
+}

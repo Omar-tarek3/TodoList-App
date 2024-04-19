@@ -1,0 +1,29 @@
+version: '3'
+
+services: 
+  mysql:
+    image: omartarekabdelall/todo-list-app:mysql
+    ports:
+      - 3000:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=omar1234 
+    restart: always
+    volumes:
+      - mysqldb:/var/lib/mysql
+  
+  frontend:
+    image: omartarekabdelall/todo-list-app:frontend
+    ports:
+      - 4173:4173
+    restart: always
+
+  backend:
+    image: omartarekabdelall/todo-list-app:backend
+    ports:
+      - 8081:8081
+    restart: always
+    depends_on: 
+      - mysql
+    
+volumes:
+  mysqldb:
