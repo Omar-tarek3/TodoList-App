@@ -20,11 +20,11 @@ pipeline {
             }
         }
 
-        stage('deploy')
+        stage('push Image')
         {
             steps {
                 script{
-                     echo 'hello 2'
+                    gv.pushImage() 
                 }
             }
         }
