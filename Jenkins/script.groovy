@@ -17,9 +17,10 @@ def buildImage() {
 
 def pushImage(){
 
+
     echo "Pushing Images to Dockerhub Repo"
 
-     withCredentials([usernamePassword(
+    withCredentials([usernamePassword(
         credentialsId:'Dockerhub', passwordVariable:'dockerhubPass', usernameVariable:'dockerhubUser')]){
 
             sh "echo $dockerhubPass | docker login -u $dockerhubUser --password-stdin"         
