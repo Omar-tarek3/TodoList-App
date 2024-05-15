@@ -10,7 +10,18 @@ RUN apt-get update && \
  chmod 777 dockerinstall && \
  ./dockerinstall 
 
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
+    chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin/kubectl
+
+RUN apt-get install -y iputils-ping && rm -rf /var/lib/apt/lists/*
+
+
+RUN touch /var/run/docker.sock
+RUN chmod 666 /var/run/docker.sock
+
 USER jenkins
+
 
 
 #CMD ["/bin/sh", "-c", "chmod 666 /var/run/docker.sock && su jenkins -c '/usr/bin/tini -- /usr/local/bin/jenkins.sh'"]

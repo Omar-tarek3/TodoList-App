@@ -18,7 +18,7 @@ export default function App(){
 
   const getTodoList = () => {
 
-    Axios.get("http://localhost:8081/TodoList" , ) .then((response) => { 
+    Axios.get("http://todolist.app.com/TodoList" , ) .then((response) => { 
       setTodoList(response.data)
     });
 
@@ -27,7 +27,7 @@ export default function App(){
   
   const addTodo = () =>{
     console.log(todo);
-    Axios.post("http://localhost:8081/Add" , {
+    Axios.post("http://todolist.app.com/Add" , { //"http://localhost:8081/Add" ,my todolist bea
       todo: todo,
       description: description,
       deadline: deadline,
@@ -46,7 +46,7 @@ export default function App(){
       return currentTodos.filter(todo =>todo.id !== id ) //remove todo from react
     })
 
-    Axios.delete("http://localhost:8081/Delete/:id".replace(':id', id)) 
+    Axios.delete("http://todolist.app.com/Delete/:id".replace(':id', id)) 
     .then(response => {
       console.log('Row deleted successfully - ID: ', id);
       

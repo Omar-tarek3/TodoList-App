@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend 
+  labels:
+    app: todolist-app
+spec:
+  selector:
+    matchLabels:
+      app: todolist-app
+      tier: backend
+#  strategy:
+#    type: Recreate
+  template:
+    metadata:
+      name: webserver-pod
+      labels:
+        app: todolist-app
+        tier: backend
+    spec:
+      containers:
+      - image: omartarekabdelall/todo-list-app:backend-1
+        name: backend-container
+        ports:
+        - containerPort: 8081
+          name: webserver-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-svc
+  labels:
+    app: todolist-app
+    tier: backend
+spec:
+ # type: NodePort
+  ports:
+    - protocol: TCP 
+     # nodePort: 30001
+      port: 8081
+      targetPort: 8081
+  selector:
+    app: todolist-app
+    tier: backend
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+     - host: todolist.app.com
+       http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                  service:
+                    name: backend-svc
+                    port:
+                      number: 8081
+                
