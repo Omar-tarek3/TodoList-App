@@ -39,4 +39,25 @@ def updateK8s() {
 
 }
 
+
+def githubPush() {
+     echo "Pushing K8s manifests to github"
+     
+    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+
+        sh 'git config --global user.email "omartarekabdelall@gmail.com" '
+        sh 'git config --global user.name "Jenkins" '
+        sh 'git status'
+        sh 'git branch'
+        sh 'git config --list'
+
+        sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/TodoList-App.git"
+        sh "git add . "
+        sh 'git commit -m "update: jenkins update yo k8s manifests changes" '
+        sh "git push origin HEAD:master"
+        sh "git pull origin master"
+    }
+
+}
+
 return this 
