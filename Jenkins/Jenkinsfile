@@ -10,7 +10,7 @@ pipeline {
                     gv = load "${WORKSPACE}/Jenkins/script.groovy" 
                     
                     env.FRONTEND_IMAGE = "omartarekabdelall/todo-list-app:frontend-${env.BUILD_NUMBER}"
-                    env.BACKEND_IMAGE = "omartarekabdelall/todo-list-app:backend-${env.BUILD_NUMBER}"
+                    env.BACKEND_IMAGE = "omartarekabdelall/todo-list-app:backend-"
                     env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-${env.BUILD_NUMBER}"
                     env.GITHUB_TOKEN = credentials('github-token')
                     //TEST = credentials('test')
@@ -35,33 +35,6 @@ pipeline {
                 }
             }
         }
-
-        stage('sync GitHub Repo')
-        {
-            steps {
-                script{
-
-                     echo "Pushing K8s manifests to github"
-
-                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
-
-
-                            sh 'git config --global user.email "omartarekabdelall@gmail.com" '
-                            sh 'git config --global user.name "Jenkins" '
-                            sh 'git status'
-                            sh 'git branch'
-
-                            sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/K8s.git"
-                            sh "git fetch origin"
-                            sh" git merge origin/master || git rebase origin/master"
-
-
-                     }
-                        
-
-                }
-            }
-        }   
 
          stage('Update K8s Manifests')
         {
@@ -90,11 +63,10 @@ pipeline {
                             sh 'git branch'
                             sh 'git config --list'
 
-                            sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/K8s.git"
-                            sh "git add ./k8s/ "
+                            sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/TodoList-App.git"
+                            sh "git add . "
                             sh 'git commit -m "update: update k8s manifests changes" '
                             sh "git push origin HEAD:master"
-
                      }
                         
 
