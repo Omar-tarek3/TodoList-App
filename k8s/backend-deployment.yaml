@@ -19,7 +19,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - image: omartarekabdelall/todo-list-app:backend-71
+      - image: omartarekabdelall/todo-list-app:backend-72
         name: backend-container
         ports:
         - containerPort: 8081
