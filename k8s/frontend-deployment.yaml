@@ -19,7 +19,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: omartarekabdelall/todo-list-app:frontend-74
+      - image: omartarekabdelall/todo-list-app:frontend-75
         name: frontend-container
         ports:
         - containerPort: 4173
