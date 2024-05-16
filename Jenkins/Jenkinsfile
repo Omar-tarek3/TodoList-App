@@ -62,7 +62,6 @@ pipeline {
                             sh 'git config --list'
 
                             sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/Omar-tarek3/TodoList-App.git"
-                            sh "git switch K8s"
                             sh "git add . "
                             sh 'git commit -m "update: update k8s manifests changes" '
                             sh "git push origin HEAD:K8s"
