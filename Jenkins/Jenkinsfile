@@ -9,9 +9,9 @@ pipeline {
                 script {
                     gv = load "${WORKSPACE}/Jenkins/script.groovy" 
                     
-                    env.FRONTEND_IMAGE = "omartarekabdelall/todo-list-app:frontend-${env.BUILD_NUMBER}"
+                    env.FRONTEND_IMAGE = "omartarekabdelall/todo-list-app:frontend-"
                     env.BACKEND_IMAGE = "omartarekabdelall/todo-list-app:backend-"
-                    env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-${env.BUILD_NUMBER}"
+                    env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-"
                     env.GITHUB_TOKEN = credentials('github-token')
                     //TEST = credentials('test')
                 }
