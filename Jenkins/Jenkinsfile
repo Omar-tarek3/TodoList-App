@@ -30,8 +30,7 @@ pipeline {
         {
             steps {
                 script{
-                    //gv.pushImage()
-                    echo "pushed " 
+                    gv.pushImage() 
                 }
             }
         }
@@ -40,9 +39,7 @@ pipeline {
         {
             steps {
                 script{
-
                      gv.updateK8s() 
-
                 }
             }
         }   
@@ -51,7 +48,6 @@ pipeline {
         {
             steps {
                 script{
-
                         gv.githubPush()
                 }
             }
