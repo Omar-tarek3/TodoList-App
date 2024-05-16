@@ -29,4 +29,14 @@ def pushImage(){
 
 }
 
+def updateK8s() {
+
+    sh "sed -i 's|@BACKEND_IMAGE@|${BACKEND_IMAGE}|g' k8s/backend-deployment.yaml"
+    sh"cat k8s/backend-deployment.yaml"
+
+    sh "sed -i 's|@FRONTEND_IMAGE@|${FRONTEND_IMAGE}|g' k8s/frontend-deployment.yaml"
+    sh"cat k8s/frontend-deployment.yaml"  
+                         
+}
+
 return this 
