@@ -4,10 +4,14 @@ pipeline {
     agent any
     stages {
     
-        stage('init') {
+        stage('Setup Environment') {
             steps {
                 script {
-                    gv = load "${WORKSPACE}/Jenkins/script.groovy"
+                    gv = load "${WORKSPACE}/Jenkins/script.groovy" 
+                    
+                    env.FRONTEND_IMAGE = "omartarekabdelall/todo-list-app:frontend-${env.BUILD_NUMBER}"
+                    env.BACKEND_IMAGE = "omartarekabdelall/todo-list-app:backend-${env.BUILD_NUMBER}"
+                    env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-${env.BUILD_NUMBER}"
                 }
             }
          }

@@ -27,7 +27,7 @@ export default function App(){
   
   const addTodo = () =>{
     console.log(todo);
-    Axios.post("http://todolist.app.com/Add" , { //"http://localhost:8081/Add" ,my todolist bea
+    Axios.post("http://todolist.app.com/Add" , { // todolist.app as I have a dns etnery to map it localhost (where Ingress controller run).
       todo: todo,
       description: description,
       deadline: deadline,
