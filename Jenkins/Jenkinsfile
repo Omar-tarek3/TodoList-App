@@ -28,7 +28,7 @@ pipeline {
         {
             steps {
                 script{
-                    gv.pushImage() 
+                    //gv.pushImage() 
                 }
             }
         }
