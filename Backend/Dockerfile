@@ -14,6 +14,10 @@ RUN npm up &&  npm i && \
 
 COPY . . 
 
+
+
+ 
+
 RUN chmod +x ./node_modules/.bin/nodemon
 
 EXPOSE 8081

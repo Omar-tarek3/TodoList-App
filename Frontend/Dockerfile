@@ -14,7 +14,7 @@ FROM node:latest AS production
 
 WORKDIR /react-app/prod
 
-# copy Machine code files from build stager to run stage 
+# copy Machine code files from build stage to run stage 
 COPY --from=builder /react-app/dist/ ./dist/
 
 COPY vite.config.js .
