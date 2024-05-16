@@ -67,7 +67,7 @@ pipeline {
                             sh "git add . "
                             sh 'git commit -m "update: jenkins update yo k8s manifests changes" '
                             sh "git push origin HEAD:master"
-                            sh "git pull"
+                            sh "git pull origin master"
                      }
                         
 
