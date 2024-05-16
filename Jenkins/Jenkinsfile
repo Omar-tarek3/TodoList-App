@@ -64,7 +64,7 @@ pipeline {
                             sh "git remote set-url origin https://${USER}:${PASS}@github.com/Omar-tarek3/TodoList-App.git"
                             sh "git add . "
                             sh 'git commit -m "update: update k8s manifests changes" '
-                            sh "git push origin HEAD:K8s"
+                            sh "git push https://${USER}:${PASS}@github.com/Omar-tarek3/TodoList-App.git  HEAD:K8s"
 
 
                         } 
