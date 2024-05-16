@@ -52,9 +52,9 @@ pipeline {
                             sh 'git branch'
 
                             sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/K8s.git"
-                            sh "git pull origin master"
+                            sh "git fetch origin"
                             sh" git merge origin/master || git rebase origin/master"
-                            
+
 
                      }
                         
