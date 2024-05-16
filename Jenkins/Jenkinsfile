@@ -12,8 +12,6 @@ pipeline {
                     env.FRONTEND_IMAGE = "omartarekabdelall/todo-list-app:frontend-${env.BUILD_NUMBER}"
                     env.BACKEND_IMAGE = "omartarekabdelall/todo-list-app:backend-${env.BUILD_NUMBER}"
                     env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-${env.BUILD_NUMBER}"
-                    env.GITHUB_TOKEN = credentials('github-token')
-                    //TEST = credentials('test')
                 }
             }
          }
@@ -52,9 +50,7 @@ pipeline {
             steps {
                 script{
 
-                     echo "Pushing K8s manifests to github"
-
-                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                     echo "Pushing Images to Dockerhub Repo"
 
 
                             sh 'git config --global user.email "omartarekabdelall@gmail.com" '
@@ -63,13 +59,13 @@ pipeline {
                             sh 'git branch'
                             sh 'git config --list'
 
-                            sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/TodoList-App.git"
+                            sh "git remote set-url origin https://${USER}:${PASS}@github.com/Omar-tarek3/TodoList-App.git"
                             sh "git add . "
                             sh 'git commit -m "update: update k8s manifests changes" '
                             sh "git push origin HEAD:K8s"
 
-                     }
-                        
+
+                        } 
 
                 }
             }
