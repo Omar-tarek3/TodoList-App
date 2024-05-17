@@ -2,16 +2,17 @@
 
 The TodoList Microservices Application is a comprehensive project that embodies a modern approach to software development and deployment. It comprises a frontend built with React, a backend Node.js Express, and a MySQL database considering DevOps best practcies and automated CI/CD pipelines for efficient and scalable application delivery.
 
--------------------
+
 
 ## Technology Stack
 
-- **Frontend:** React
+- **Frontend:** React, CSS
 - **Backend:** Node.js Express
 - **Database:** MySQL
 - **Containerization:** Docker
 - **Orchestration:** Kubernetes 
 - **Continuous Integration:** Jenkins
+- **Continuous Deployment:** ArgoCD
 - **Version Control:** Git/GitHub
 
 ## Architecture
@@ -56,23 +57,20 @@ The architecture enables scalability, reliability, and automation throughout the
 
 
 ## Features
-
+- Full stack application
 - Responsive and user-friendly frontend for adding and managing todo list.
-- RESTful API backend for exposing API-Endpoints and handling CRUD operations on todo items.
-- Persistent storage using a MySQL database.
-- Containerized architecture for easy deployment and scalability.
+- RESTful API backend for exposing API-Endpoints and handling CRUD operations on todo-items.
+- Persistent storage for storing todo-items using a MySQL database.
+- Schema.sql file to intiate schema and database table.
+- Containerized architecture using Docker for easy deployment and scalability.
 - Orchestration and management of containers with Kubernetes.
-- Automated CI/CD pipeline for efficient development and deployment workflows.
+- Automated Jenkins CI pipeline for building and pushing Docker images and updating K8s manifests.
+- Utilized ArgoCD for continuous deployment processes within the Kubernetes cluster.
 
 
 
-## Deployment Methods 
-- Setup the minikube
-- apply yaml files       
-- expose the services
-
-- or using the jenkins pipeline
-
+## App overview
+going through arhcitecture / pics
 
 
 ---------------------------
