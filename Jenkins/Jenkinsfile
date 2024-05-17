@@ -4,7 +4,8 @@ pipeline {
     agent any
     stages {
     
-        stage('Setup Environment') {
+        stage('Setup Environment')
+        {
             steps {
                 script {
                     gv = load "${WORKSPACE}/Jenkins/script.groovy" 
@@ -14,45 +15,44 @@ pipeline {
                     env.DATABASE_IMAGE = "omartarekabdelall/todo-list-app:database-"
                     env.GITHUB_TOKEN = credentials('github-token')
                     //TEST = credentials('test')
-                }
-            }
-         }
+                }}
+        }
 
-        stage('Build Images') {
+        stage('Build Images')
+        {
             steps {
                 script{
                     gv.buildImage()  
-                }
-            }
+                }}
         }
+          
 
         stage('Push to DockerHub')
         {
             steps {
                 script{
                     gv.pushImage() 
-                }
-            }
+                }}
         }
+           
 
          stage('Update K8s Manifests')
         {
             steps {
                 script{
                      gv.updateK8s() 
-                }
-            }
-        }   
+                }}
+        }
+            
 
          stage('Update GitHub Repo')
         {
             steps {
                 script{
                         gv.githubPush()
-                }
-            }
-        }   
-
+                }}
+        }
+            
 
     }
 }
