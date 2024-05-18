@@ -37,7 +37,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    - **Update Kubernetes Manifest Files**: Jenkins updates the Kubernetes manifest files with the new image tags.
 
-   - **Commit Changes to GitHub Repo**: Jenkins commits the updated Kubernetes manifest files back to the GitHub repository.
+   - **Push Changes to GitHub Repo**: Jenkins pushs the updated Kubernetes manifest files back to the GitHub repository.
 
 4. **ArgoCD Deploys to Kubernetes**:
    - ArgoCD monitors the K8s directory in GitHub repository for changes.
@@ -60,43 +60,9 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 
 ## App overview
-going through arhcitecture / pics
-
-
----------------------------
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Continuous Integration and Deployment](#continuous-integration-and-deployment)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-Taking advantage of containerization technology, each component of the application has been encapsulated into Docker containers, providing portability and consistency across various environments. Docker images for the frontend, backend, and database have been created and hosted on Docker Hub, ensuring easy access and distribution.
-
-Furthermore, the project leverages Kubernetes (k8s) for orchestration and scaling, allowing seamless management of the application's lifecycle in a distributed environment. By deploying the Docker images to a Kubernetes cluster, the TodoList Microservices Application achieves high availability, scalability, and resilience.
-
-The Continuous Integration and Continuous Deployment (CI/CD) processes are streamlined using Jenkins pipeline automation. From building Docker images to deploying updates to the Kubernetes cluster, the CI/CD pipeline ensures rapid iteration and delivery of new features, enhancements, and bug fixes.
-
-
-
-## Endpoints
-
-### 1. Create a new blog post
-- **URL**: `/api/posts`
-- **Method**: POST
-- **Description**: Creates a new blog post.
-- **Request Body**:
-  ```json
-  {
-    "title": "Sample Title",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    "author": "John Doe"
-  }
-wwsw
+going through arhcitecture  
+- jenkins setup
+- k8s cluster arhcitecture 
+- port forward 
+- api end points 
+- pics 
