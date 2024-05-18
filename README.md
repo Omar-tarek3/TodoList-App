@@ -16,10 +16,11 @@ The TodoList Microservices Application is a comprehensive project that embodies 
 - **Version Control:** Git/GitHub
 
 ## Architecture
+The application follows a modern microservices architecture, leveraging containerization and Kubernetes for deployment. The following components are essential to our setup:
 
 ![TodoList Arhcitecture](https://github.com/Omar-tarek3/Assets/blob/master/TodoList-arhci.png)
 
-Our To-Do application follows a modern microservices architecture, leveraging containerization and Kubernetes for deployment. The following components are essential to our setup:
+
 
 
 ### CI/CD Process
