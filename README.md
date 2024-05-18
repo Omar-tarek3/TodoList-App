@@ -11,51 +11,42 @@ The TodoList Microservices Application is a comprehensive project that embodies 
 - **Database:** MySQL
 - **Containerization:** Docker
 - **Orchestration:** Kubernetes 
-- **Continuous Integration:** Jenkins
-- **Continuous Deployment:** ArgoCD
+- **CI/CD Pipeline:** Jenkins
+- **GitOps:** ArgoCD
 - **Version Control:** Git/GitHub
 
 ## Architecture
 
 ![TodoList Arhcitecture](https://github.com/Omar-tarek3/Assets/blob/master/TodoList-arhci.png)
 
+Our To-Do application follows a modern microservices architecture, leveraging containerization and Kubernetes for deployment. The following components are essential to our setup:
 
 
-The TodoList microservices application follows a modern microservices architecture, utilizing various technologies and tools for containerization, orchestration, and continuous integration/continuous deployment (CI/CD). Below is an overview of the architecture:
+### CI/CD Process
 
-### Components
+The CI/CD process ensures that any changes made by developers are automatically built, and deployed to the Kubernetes cluster without manual intervention. Here's how it works:
 
-1. **Frontend (React)**
-   - The frontend of the application is developed using React, a popular JavaScript library for building user interfaces.
-   - It provides the user interface for managing todo items, interacting with the backend services, and displaying data.
+1. **Developer Pushes Changes**: 
+   - A developer pushes code changes to the GitHub repository.
 
-2. **Backend (Node.js Express)**
-   - The backend of the application is built with Node.js and Express.js, providing RESTful APIs for CRUD operations on todo items.
-   - It handles business logic, interacts with the MySQL database, and serves data to the frontend.
+2. **Webhook Event Triggers Jenkins Pipeline**: 
+   - A GitHub webhook is configured to trigger a Jenkins pipeline whenever changes are pushed to the repository.
 
-3. **Database (MySQL)**
-   - The MySQL database is used to store todo items and their associated data.
-   - It provides persistence for the application's data and is accessed by the backend services.
+3. **Jenkins Pipeline**:
+   - **Build Stage**: Jenkins pulls the latest code from the GitHub repository.
+   - **Build Docker Images**: Jenkins builds Docker images for the frontend, backend, and database services.
+   - **Push Docker Images to DockerHub**: Jenkins pushes the built Docker images to DockerHub making them accessible for deployment in Kubernetes.
 
-### Containerization
+4. **Update Kubernetes Manifest Files**:
+   - Jenkins updates the Kubernetes manifest files with the new image tags.
 
-- Each component of the application, including the frontend, backend, and database, is containerized using Docker.
-- Docker images are created for each component, ensuring consistency and portability across different environments.
-- These Docker images are then pushed to Docker Hub, making them accessible for deployment in Kubernetes.
+5. **Commit Changes to GitHub Repo**:
+   - Jenkins commits the updated Kubernetes manifest files back to the GitHub repository.
 
-### Orchestration (Kubernetes)
-
-- The application is deployed and managed in a Kubernetes cluster.
-- Kubernetes provides container orchestration, scaling, and management capabilities, ensuring high availability and reliability of the application.
-- Deployments, services, and ingresses are defined in Kubernetes manifests to configure and manage the application's components.
-
-### CI/CD Pipeline (Jenkins)
-
-- Jenkins is used to implement a CI/CD pipeline for automating the build, test, and deployment processes.
-- Pipeline scripts define the stages and tasks involved in building Docker images, running tests, pushing images to Docker Hub, and deploying the application to Kubernetes.
-- Continuous integration ensures that code changes are regularly integrated and tested, while continuous deployment automates the deployment of new versions of the application to the Kubernetes cluster.
-
-The architecture enables scalability, reliability, and automation throughout the development, deployment, and operation of the TodoList microservices application.
+6. **ArgoCD Deploys to Kubernetes**:
+   - ArgoCD monitors the K8s directory in GitHub repository for changes.
+   - When changes are detected, ArgoCD pulls the updated manifest files.
+   - ArgoCD applies the changes to the local Kubernetes cluster, deploying the new application version.
 
 
 
