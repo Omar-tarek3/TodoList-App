@@ -17,6 +17,9 @@ The TodoList Microservices Application is a comprehensive project that embodies 
 
 ## Architecture
 
+![TodoList Arhcitecture](https://github.com/Omar-tarek3/Assets/blob/master/TodoList-arhci.png)
+
+
 
 The TodoList microservices application follows a modern microservices architecture, utilizing various technologies and tools for containerization, orchestration, and continuous integration/continuous deployment (CI/CD). Below is an overview of the architecture:
 
