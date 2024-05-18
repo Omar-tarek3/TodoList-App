@@ -16,7 +16,6 @@ The TodoList Microservices Application is a comprehensive project that embodies 
 - **Version Control:** Git/GitHub
 
 ## Architecture
-The application follows a modern microservices architecture, leveraging containerization and Kubernetes for deployment. The following components are essential to our setup:
 
 ![TodoList Arhcitecture](https://github.com/Omar-tarek3/Assets/blob/master/TodoList-arhci.png)
 
@@ -38,13 +37,11 @@ The CI/CD process ensures that any changes made by developers are automatically 
    - **Build Docker Images**: Jenkins builds Docker images for the frontend, backend, and database services.
    - **Push Docker Images to DockerHub**: Jenkins pushes the built Docker images to DockerHub making them accessible for deployment in Kubernetes.
 
-4. **Update Kubernetes Manifest Files**:
-   - Jenkins updates the Kubernetes manifest files with the new image tags.
+   - **Update Kubernetes Manifest Files**: Jenkins updates the Kubernetes manifest files with the new image tags.
 
-5. **Commit Changes to GitHub Repo**:
-   - Jenkins commits the updated Kubernetes manifest files back to the GitHub repository.
+   - **Commit Changes to GitHub Repo**: Jenkins commits the updated Kubernetes manifest files back to the GitHub repository.
 
-6. **ArgoCD Deploys to Kubernetes**:
+4. **ArgoCD Deploys to Kubernetes**:
    - ArgoCD monitors the K8s directory in GitHub repository for changes.
    - When changes are detected, ArgoCD pulls the updated manifest files.
    - ArgoCD applies the changes to the local Kubernetes cluster, deploying the new application version.
