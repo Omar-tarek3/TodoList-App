@@ -22,8 +22,6 @@ The TodoList Microservices Application is a comprehensive project that embodies 
 
 
 
-### CI/CD Process
-
 The CI/CD process ensures that any changes made by developers are automatically built, and deployed to the Kubernetes cluster without manual intervention. Here's how it works:
 
 1. **Developer Pushes Changes**: 
