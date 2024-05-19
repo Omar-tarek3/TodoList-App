@@ -28,7 +28,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
    - A developer pushes code changes to the GitHub repository.
 
 2. **Webhook Event Triggers Jenkins Pipeline**: 
-   - A GitHub webhook is configured to trigger a Jenkins pipeline whenever changes are pushed to the repository.
+   - A GitHub webhook is configured to trigger a Jenkins pipeline whenever changes are pushed by the developer to the repository.
 
 3. **Jenkins Pipeline**:
    - **Build Stage**: Jenkins pulls the latest code from the GitHub repository.
