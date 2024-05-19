@@ -53,7 +53,7 @@ def githubPush() {
 
         sh "git remote set-url origin https://$GITHUB_TOKEN@github.com/Omar-tarek3/TodoList-App.git"
         sh "git add . "
-        sh 'git commit -m "update: jenkins update yo k8s manifests changes" '
+        sh 'git commit -m "jenkins pipeline: update k8s manifests" '
         sh "git push origin HEAD:master"
         sh "git pull origin master"
     }

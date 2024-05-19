@@ -40,7 +40,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
    - **Push Changes to GitHub Repo**: Jenkins pushes the updated Kubernetes manifest files back to the GitHub repository.
 
 4. **ArgoCD Deploys to Kubernetes**:
-   - ArgoCD monitors the K8s directory in GitHub repository for changes.
+   - ArgoCD monitors the `K8s` directory in GitHub repository for changes.
    - When changes are detected, ArgoCD pulls the updated manifest files.
    - ArgoCD applies the changes to the local Kubernetes cluster, deploying the new application version.
 
@@ -48,7 +48,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 ## Features
 - Full stack application
-- Responsive and user-friendly frontend for adding and managing todo list.
+- Responsive and user-friendly frontend for adding and managing todo list using React and custom CSS file
 - RESTful API backend for exposing API-Endpoints and handling CRUD operations on todo-items.
 - Persistent storage for storing todo-items using a MySQL database.
 - Schema.sql file to intiate schema and database table.
@@ -61,7 +61,28 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 ## App overview
 going through arhcitecture  
-- docker images
+### Docker Compose
+Have a quick set up and run to the entire application stack to view the app components and interact with it.
+
+1. #### Prerequisites:
+Ensure you have Docker and Docker Compose installed on your machine
+
+2. #### Running the Application:
+- Copy the `docker-compose.yaml` file located at the app's root directory
+- Run Docker Compose `docker compose -f <your-file-name> up `
+
+3. #### Access the application:  
+- **Frontend:** Access the frontend at http://localhost:4173.
+
+- **Backend API:**  
+  - The backend API will be accessible at `http://localhost:8081`.
+  - Navigate to http://localhost:8081/TodoList to access the API endpoint for fetching items from the database.
+
+- **Database:** The database service will be running internally and accessible by the backend container .
+
+
+
+
 - run app using docker-compose.yaml
 - api end points 
 - jenkins setup
