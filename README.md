@@ -92,7 +92,7 @@ Here's how it works:
    `docker compose -f <your-composeFile-name> up `
    - Execute commands to jenkins container as root-user:\
     `docker exec -it -u 0 <container-id> bash `
-   - Allow non-root users access to docker daemon socket for running docker commands:\
+   - Adjust Docker-Socket permissions so that Jenkins can communicate with the Docker daemon:\
     `chmod 666 /var/run/docker.sock`
 
 
