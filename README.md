@@ -37,7 +37,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    - **Update Kubernetes Manifest Files**: Jenkins updates the Kubernetes manifest files with the new image tags.
 
-   - **Push Changes to GitHub Repo**: Jenkins pushs the updated Kubernetes manifest files back to the GitHub repository.
+   - **Push Changes to GitHub Repo**: Jenkins pushes the updated Kubernetes manifest files back to the GitHub repository.
 
 4. **ArgoCD Deploys to Kubernetes**:
    - ArgoCD monitors the K8s directory in GitHub repository for changes.
@@ -61,8 +61,10 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 ## App overview
 going through arhcitecture  
+- docker images
+- run app using docker-compose.yaml
+- api end points 
 - jenkins setup
 - k8s cluster arhcitecture 
 - port forward 
-- api end points 
 - pics 
