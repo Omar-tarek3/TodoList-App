@@ -67,4 +67,5 @@ going through arhcitecture
 - jenkins setup
 - k8s cluster arhcitecture 
 - port forward 
+- Argocd setup
 - pics 
