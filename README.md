@@ -59,25 +59,18 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 
 
-## App overview
-going through arhcitecture  
-### Docker Compose
-Have a quick set up and run to the entire application stack to view the app components and interact with it.
+## App overview 
+1. ### Docker Compose
+   Ensure you have Docker and Docker Compose installed on your machine and have a quick set up and run to the entire application stack to view the app components and interact with it. 
 
-1. #### Prerequisites:
-   Ensure you have Docker and Docker Compose installed on your machine
-
-2. #### Running the Application:
+   #### Running the Application:
    - Copy the `docker-compose.yaml` file located at the app's root directory
    - Run Docker Compose `docker compose -f <your-file-name> up `
 
-3. #### Access the application:  
+   #### Access the application:  
    - **Frontend:** Access the frontend at http://localhost:4173.
 
-   - **Backend API:**  
-     - The backend API will be accessible at `http://localhost:8081`.
-      - Navigate to http://localhost:8081/TodoList to access the API endpoint for fetching items from the database.
-
+   - **Backend API:** The backend API will be accessible at `http://localhost:8081`. Navigate to http://localhost:8081/TodoList to access the API endpoint for fetching items from the database.
     - **Database:** The database service will be running internally and accessible by the backend container .
 
 
