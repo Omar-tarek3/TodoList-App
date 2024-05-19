@@ -65,13 +65,21 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    #### Running the Application:
    - Copy the `docker-compose.yaml` file located at the app's root directory
-   - Run Docker Compose `docker compose -f <your-file-name> up `
+   - Run Docker Compose command at your working directory `docker compose -f <your-file-name> up `
 
    #### Access the application:  
-   - **Frontend:** Access the frontend at http://localhost:4173.
+   - **Frontend:** Access the frontend at `http://localhost:4173`.
 
-   - **Backend API:** The backend API will be accessible at `http://localhost:8081`. Navigate to http://localhost:8081/TodoList to access the API endpoint for fetching items from the database.
+   - **Backend API:** The backend API will be accessible at `http://localhost:8081`. Navigate to `http://localhost:8081/TodoList` to access the API endpoint for fetching items from the database.
     - **Database:** The database service will be running internally and accessible by the backend container .
+
+    
+![Frontend](https://github.com/Omar-tarek3/Assets/blob/master/Frontend.png)
+ 
+
+![Frontend](https://github.com/Omar-tarek3/Assets/blob/master/Frontend-L.png)
+
+![Backend](https://github.com/Omar-tarek3/Assets/blob/master/backend.png)
 
 
 
