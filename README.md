@@ -87,7 +87,8 @@ https://github.com/Omar-tarek3/Assets/blob/master/front-back-3.png)
    - Replace ` context: ./Jenkins`section in the `jenkins-compose.yaml` with the path to your dockerfile.
    - Run Docker Compose command at your working directory: \
    `docker compose -f <your-composeFile-name> up `
-   - Execute commands to jenkins container as root-user: `docker exec -it -u 0 <container-id> bash `
+   - Execute commands to jenkins container as root-user:\
+    `docker exec -it -u 0 <container-id> bash `
    - Allow non-root users access to docker daemon socket for running docker commands:\
     `chmod 666 /var/run/docker.sock`
 
