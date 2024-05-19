@@ -52,7 +52,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 - RESTful API backend for exposing API-Endpoints and handling CRUD operations on todo-items.
 - Persistent storage for storing todo-items using a MySQL database.
 - Schema.sql file to intiate schema and database table.
-- Containerized architecture using Docker build for each microservic component (frontend, backend, database).
+- Containerized architecture using Docker build for each microservice component (frontend, backend, database).
 - Orchestration and management of containers with Kubernetes.
 - Automated Jenkins CI pipeline for building and pushing Docker images and updating K8s manifests.
 - Utilized ArgoCD for continuous deployment processes within the Kubernetes cluster.
