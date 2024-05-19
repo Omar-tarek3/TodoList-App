@@ -74,19 +74,10 @@ The CI/CD process ensures that any changes made by developers are automatically 
     - **Database:** The database service will be running internally and accessible by the backend container .
 
 
-   
-![front&back](https://github.com/Omar-tarek3/Assets/blob/master/Front-back.png)
 
    
 ![front&back](https://github.com/Omar-tarek3/Assets/blob/master/fron-end-2.png)
  
-    
-![Frontend](https://github.com/Omar-tarek3/Assets/blob/master/Frontend.png)
- 
-
-![Frontend](https://github.com/Omar-tarek3/Assets/blob/master/Frontend-L.png)
-
-![Backend](https://github.com/Omar-tarek3/Assets/blob/master/backend.png)
 
 
 
