@@ -83,7 +83,7 @@ https://github.com/Omar-tarek3/Assets/blob/master/front-back-3.png)
  
 
 2. ### Jenkins Setup
-   This section explains how I set up and run Jenkins in a Docker container for continuous integration and deployment. Jenkins is accessible at `http://localhost:8080`. \
+   This section explains how I set up and run Jenkins in a Docker container for continuous integration and deployment. Jenkins server is accessible at `http://localhost:8080`. \
 Here's how it works:
    
    - Copy the `Jenkins/dockerfile` and the `jenkins-compose.yaml` files.
