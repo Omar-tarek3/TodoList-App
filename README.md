@@ -61,7 +61,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 ## App overview 
 1. ### Docker Compose
-   Ensure you have Docker and Docker Compose installed on your machine and have a quick set up and run to the entire application stack to view the app components and interact with it. 
+    You can have a quick set up and run to the entire application stack to view the app components and interact with it. Ensure you have Docker and Docker Compose installed on your machine.
 
    #### Running the Application:
    - Copy the `docker-compose.yaml` file located at the app's root directory
