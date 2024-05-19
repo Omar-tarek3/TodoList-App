@@ -54,7 +54,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 - Schema.sql file to intiate schema and database table.
 - Containerized architecture using Docker build for each microservice component (frontend, backend, database).
 - Orchestration and management of containers with Kubernetes.
-- Automated Jenkins CI pipeline for building and pushing Docker images and updating K8s manifests.
+- Automated Jenkins CI/CD pipeline for building and pushing Docker images and updating K8s manifests.
 - Utilized ArgoCD for continuous deployment processes within the Kubernetes cluster.
 
 
