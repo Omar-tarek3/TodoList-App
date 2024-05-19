@@ -90,7 +90,7 @@ Here's how it works:
    - Replace ` context: ./Jenkins`section in the `jenkins-compose.yaml` with the path to your dockerfile.
    - Run Docker Compose command at your working directory: \
    `docker compose -f <your-composeFile-name> up `
-   - Execute commands to jenkins container as root-user:\
+   - Execute commands within the jenkins container as root-user:\
     `docker exec -it -u 0 <container-id> bash `
    - Adjust Docker-Socket permissions so that Jenkins can communicate with the Docker daemon:\
     `chmod 666 /var/run/docker.sock`
