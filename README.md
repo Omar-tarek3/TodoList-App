@@ -73,6 +73,10 @@ The CI/CD process ensures that any changes made by developers are automatically 
    - **Backend API:** The backend API will be accessible at `http://localhost:8081`. Navigate to `http://localhost:8081/TodoList` to access the API endpoint for fetching items from the database.
     - **Database:** The database service will be running internally and accessible by the backend container .
 
+
+   
+![front&back](https://github.com/Omar-tarek3/Assets/blob/master/Front-back.png)
+ 
     
 ![Frontend](https://github.com/Omar-tarek3/Assets/blob/master/Frontend.png)
  
