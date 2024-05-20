@@ -114,7 +114,7 @@ Here's how it works:
    #### Cluster Architecture:
       Kubernetes cluster runs on local development environment using Minikube. NGINX Ingress Controller also is installed using Helm to manage external access. The application is deployed on the Kubernetes cluster using the manifests located in the `K8s` directory.
       - **frontend-deployment.yaml**: Frontend Deployment object to ensure a specified number of replicas are running,and NodePort service for allowing external traffic to reach it via a specific port on the Minikube node.
-      - **backend-deployment.yaml**: deploymetn and nodeport for 
+      - **backend-deployment.yaml**: Backend Deployment object to ensure a specified number of replicas are running. A ClusterIP service for internal exposeing. An Ingress resource the for setting rules and filtering on the incoming tarffic and exposing api endpoints.
       - **database-statefulset.yaml**: deploymetn and nodeport for
 
 
