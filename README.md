@@ -123,7 +123,7 @@ Here's how it works:
             
 
    #### Cluster Architecture:
-      Kubernetes cluster runs on local development environment uses Minikube. NGINX Ingress Controller also is installed using Helm to manage external access.
+      Kubernetes cluster runs on local development environment uses *Minikube*. *NGINX Ingress Controller* also is installed using Helm to manage external access.
 
 
          IMAGE
