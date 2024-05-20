@@ -114,19 +114,21 @@ Here's how it works:
    #### Cluster Architecture:
       Kubernetes cluster runs on local development environment using Minikube. NGINX Ingress Controller also is installed using Helm to manage external access.
 
+      - The application is deployed on the k8s cluster by developing the manifests located at  `K8s` dir 
+      - **frontend-deployed.yaml**: deploymetn and nodeport for 
+      - **backend-deployed.yaml**: deploymetn and nodeport for 
+      - **database-statefulset.yaml**: deploymetn and nodeport for
+
 
                            IMAGE
 
-      - The application is deployed on the k8s cluster by developing the manifests located at  `K8s` dir \
-         - **frontend-deployed.yaml**: deploymetn and nodeport for 
-         - **backend-deployed.yaml**: deploymetn and nodeport for 
-         - **database-statefulset.yaml**: deploymetn and nodeport for
+      
 
       - The frontend sends request to the API endpoint which is exposed by ingress service 
       -  The backend service handels the CRUD opertation and send the aquired query to the database internally by communocatiing with the database-svc
       - database-svc forwrd the requst to the MySQL database 
       - data is persisted usng pvc and sotarge class for persisting the data on the local machine
-      
+
 
   
 
