@@ -99,13 +99,23 @@ Here's how it works:
 ![Jenkins](https://github.com/Omar-tarek3/Assets/blob/master/jenkins.png)
  
 
+3. ### Kubernetes
+   This section provides an overview of my Kubernetes cluster setup, architecture, and  details of how the application is deployed, exposed, and accessed.
+
+   #### Cluster Setup:
+      - Kubernetes cluster runs on local development environment uses Minikube. NGINX Ingress Controller also is installed using Helm to manage external access.
+
+   #### Cluster Architecture:
+   Cluster Setup:\
+       Kubernetes cluster runs on local development environment uses Minikube. NGINX Ingress Controller also is installed using Helm to manage external access.
+       
+         IMAGE
+
+      - Frontend: 
+
+  
 
 
-
-- run app using docker-compose.yaml
 - api end points 
-- jenkins setup
-- k8s cluster arhcitecture 
-- port forward 
 - Argocd setup
 - pics 
