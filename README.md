@@ -104,8 +104,12 @@ Here's how it works:
 
    #### Cluster Setup:
       - Kubernetes cluster runs on local development environment uses Minikube. NGINX Ingress Controller also is installed using Helm to manage external access.
-          
+          ```
             minikube start
+         ```
+         ```
+         helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx-ingress-controller
+         ```
 
    
             
