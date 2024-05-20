@@ -118,8 +118,8 @@ Here's how it works:
       - **`database-statefulset.yaml`:** deploymetn and nodeport for
 
 
-                           IMAGE
-
+   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi.png)
+ 
       
 
       - The frontend sends request to the API endpoint which is exposed by ingress service 
