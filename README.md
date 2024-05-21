@@ -151,19 +151,22 @@ Here's how it works:
      
    #### Accessing the Application on Minikube:
    1. ##### Setup DNS Mapping:
-   - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs:
+      - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs.
+
+      - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
+
    ```
+   #C:\Windows\System32\drivers\etc\hosts entery
    127.0.0.1 todolist.app.com
    ``` 
-   - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
 
    2. ##### Access the Frontend:
-   -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
+      -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
 
    ```
    kubectl port-forward svc/frontend-svc 4173:4173
    ```
-   - Navigate to `http://localhost:4173` to access the frontend.
+     Navigate to `http://localhost:4173` to access the frontend.
 
 
 
