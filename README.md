@@ -113,21 +113,20 @@ Here's how it works:
 
    #### Cluster Architecture:
       Kubernetes cluster runs on local development environment using Minikube. NGINX Ingress Controller also is installed using Helm to manage external access. The application is deployed on the Kubernetes cluster using the manifests located in the `K8s` directory.
-  ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi.png)
-
-      - **`frontend-deployment.yaml`:** Frontend Deployment object to ensure a specified number of replicas are running,and NodePort service for allowing external traffic to reach it via a specific port on the Minikube node.
+      <!-- - **`frontend-deployment.yaml`:** Frontend Deployment object to ensure a specified number of replicas are running,and NodePort service for allowing external traffic to reach it via a specific port on the Minikube node.
       - **`backend-deployment.yaml`:** Backend Deployment object to ensure a specified number of replicas are running. A ClusterIP service for internal exposeing. An Ingress resource the for setting rules and filtering on the incoming tarffic and exposing api endpoints.
-      - **`database-statefulset.yaml`:** deploymetn and nodeport for
+      - **`database-statefulset.yaml`:** deploymetn and nodeport for -->
 
 
-
+   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi.png)
  
-      
+     Here's a breakdown of how your request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
       - The frontend sends request to the API endpoint which is exposed by ingress service 
       -  The backend service handels the CRUD opertation and send the aquired query to the database internally by communocatiing with the database-svc
       - database-svc forwrd the requst to the MySQL database 
       - data is persisted usng pvc and sotarge class for persisting the data on the local machine
+
 
 
   
