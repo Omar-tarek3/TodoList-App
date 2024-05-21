@@ -104,7 +104,7 @@ Here's how it works:
     ```
 
 
-   ![Jenkins](https://github.com/Omar-tarek3/Assets/blob/master/jenkins.png)
+![Jenkins](https://github.com/Omar-tarek3/Assets/blob/master/jenkins.png)
  
 
 3. ### Kubernetes
@@ -117,8 +117,7 @@ Here's how it works:
       - **`backend-deployment.yaml`:** Backend Deployment object to ensure a specified number of replicas are running. A ClusterIP service for internal exposeing. An Ingress resource the for setting rules and filtering on the incoming tarffic and exposing api endpoints.
       - **`database-statefulset.yaml`:** deploymetn and nodeport for -->
 
-
-   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
+![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
  
      Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
