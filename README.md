@@ -155,18 +155,18 @@ Here's how it works:
 
       - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
 
-   ```
-   #C:\Windows\System32\drivers\etc\hosts entery
-   127.0.0.1 todolist.app.com
-   ``` 
+      ```
+      #C:\Windows\System32\drivers\etc\hosts entery
+      127.0.0.1 todolist.app.com
+      ``` 
 
    2. ##### Access the Frontend:
       -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
 
-   ```
-   kubectl port-forward svc/frontend-svc 4173:4173
-   ```
-     Navigate to `http://localhost:4173` to access the frontend.
+      ```
+       kubectl port-forward svc/frontend-svc 4173:4173
+      ```
+      Navigate to `http://localhost:4173` to access the frontend.
 
    3.  ##### Accessing the Ingress Service:
        -  Run the following command to forward port 80 on your local machine to the port used by the LoadBalancer Ingress service:
