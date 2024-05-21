@@ -122,41 +122,45 @@ Here's how it works:
  
      Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
-    1.  ##### Frontend Sends Request:
+    1.  ##### **Frontend Sends Request:**
 
         - The user interacts with the frontend application (e.g., a web page) and triggers an action that sends a request to an API endpoint.
         - This request is typically an HTTP request that needs to reach the backend service.
 
-    2. ##### Ingress Service:
+    2. ##### **Ingress Service:**
 
-      - The request first hits the Ingress resource, which is responsible for routing external HTTP/S traffic to services within the Kubernetes cluster.
+       - The request first hits the Ingress resource, which is responsible for routing external HTTP/S traffic to services within the Kubernetes cluster.
 
-   - The Ingress controller, which could be NGINX, Traefik, or another implementation, processes the request and routes it to the appropriate backend service based on the defined rules.
+       - The Ingress controller, which could be NGINX, Traefik, or another implementation, processes the request and routes it to the appropriate backend service based on the defined rules.
 
-   3. ##### Backend Service:
+   3. ##### **Backend Service:**
 
-   - The Ingress forwards the request to the backend service, which is exposed via a Kubernetes Service (let's call it backend-svc).
-    - The backend service (a pod running an application, such as a REST API server) receives the request and performs the necessary CRUD (Create, Read, Update, Delete) operations.
+      - The Ingress forwards the request to the backend service, which is exposed via a Kubernetes Service (let's call it backend-svc).
+       - The backend service (a pod running an application, such as a REST API server) receives the request and performs the necessary CRUD (Create, Read, Update, Delete) operations.
 
 
-   4. ##### Handling CRUD Operations:
+   4. ##### **Handling CRUD Operations:**
 
-   - The backend service processes the CRUD operation. If it requires data manipulation or retrieval, it prepares a query for the database.
-   - This might involve business logic, validation, or transformation of the data before sending the query to the database.
+      - The backend service processes the CRUD operation. If it requires data manipulation or retrieval, it prepares a query for the database.
+      - This might involve business logic, validation, or transformation of the data before sending the query to the database.
 
-   5. ##### Communication with Database Service:
+   5. ##### **Communication with Database Service:**
 
-   - The backend service communicates internally with the database service, which is another Kubernetes Service (let's call it database-svc).
-   - This internal communication is managed by Kubernetes networking, allowing the backend service to connect to database-svc using its service name within the cluster.
-Database Service and MySQL Database:
+      - The backend service communicates internally with the database service, which is another Kubernetes Service (let's call it database-svc).
+      - This internal communication is managed by Kubernetes networking, allowing the backend service to connect to database-svc using its service name within the cluster.
 
-The database-svc forwards the query to the actual MySQL database pod.
-MySQL processes the query, performing the requested database operations (e.g., retrieving, inserting, updating, or deleting records).
-Persistent Storage:
+   6. ##### **Database Service and MySQL Database:**
 
-The MySQL database uses Persistent Volume Claims (PVCs) to store data. PVCs are requests for storage resources in Kubernetes.
-PVCs are backed by Persistent Volumes (PVs), which are the actual storage resources. The storage class defines the type of storage used (e.g., local storage, network-attached storage).
-Data is persisted on the underlying storage system, ensuring that the database state is maintained even if pods are restarted or rescheduled.
+      - The database-svc forwards the query to the actual MySQL database pod.
+      - MySQL processes the query, performing the requested database operations (e.g., retrieving, inserting, updating, or deleting records).
+
+   7. ##### **Persistent Storage:**
+
+      - The MySQL database uses Persistent Volume Claims (PVCs) to store data. PVCs are requests for storage resources in Kubernetes.
+      - PVCs are backed by Persistent Volumes (PVs), which are the actual storage resources. The storage class defines the type of storage used (e.g., local storage, network-attached storage).
+
+      - Data is persisted on the underlying storage system, ensuring that the database state is maintained even if pods are restarted or rescheduled.
+
 Response Flow:
 
 After the database processes the query, it returns the result to the backend service.
