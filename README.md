@@ -176,11 +176,3 @@ Here's how it works:
        This command will make the Ingress controller accessible at `http://localhost:80`
 
 
-
-
-  
-
-
-- api end points 
-- Argocd setup
-- pics 
