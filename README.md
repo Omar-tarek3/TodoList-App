@@ -118,7 +118,7 @@ Here's how it works:
       - **`database-statefulset.yaml`:** deploymetn and nodeport for -->
 
 
-   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi.png)
+   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
  
      Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
