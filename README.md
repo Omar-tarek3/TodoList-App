@@ -117,16 +117,16 @@ Here's how it works:
       - **`backend-deployment.yaml`:** Backend Deployment object to ensure a specified number of replicas are running. A ClusterIP service for internal exposeing. An Ingress resource the for setting rules and filtering on the incoming tarffic and exposing api endpoints.
       - **`database-statefulset.yaml`:** deploymetn and nodeport for -->
 
-   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
+![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
  
-     Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
+   Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
-    1.  ##### **Frontend Sends Request:**
+   1.  ##### **Frontend Sends Request:**
 
         - The user interacts with the frontend application and triggers an action that sends an HTTP-request to an API endpoint.
         - This request is resolved by DNS and sent to the specified IP where the ingress controller is running.
 
-    2. ##### **Ingress Service:**
+   2. ##### **Ingress Service:**
        - NGINX Ingress controller processes the request and routes it to the `backend-svc` as defined in the Ingress resource rules.
 
    3. ##### **Backend Service:**
