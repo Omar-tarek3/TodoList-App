@@ -168,6 +168,14 @@ Here's how it works:
    ```
      Navigate to `http://localhost:4173` to access the frontend.
 
+   3.  ##### Accessing the Ingress Service:
+       -  Run the following command to forward port 80 on your local machine to the port used by the LoadBalancer Ingress service:
+       ```
+       kubectl port-forward svc/ingress-nginx-controller 80:80
+       ```
+       This command will make the Ingress controller accessible at `http://localhost:80`
+
+
 
 
   
