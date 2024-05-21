@@ -150,15 +150,16 @@ Here's how it works:
       - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
      
    #### Accessing the Application on Minikube:
-   ##### Setup DNS Mapping:
+   1. ##### Setup DNS Mapping:
    - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs:
    ```
    127.0.0.1 todolist.app.com
    ``` 
    - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
 
-   ##### Access the Frontend:
+   2. ##### Access the Frontend:
    -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
+
    ```
    kubectl port-forward svc/frontend-svc 4173:4173
    ```
