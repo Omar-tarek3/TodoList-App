@@ -149,6 +149,8 @@ Here's how it works:
       - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
      
    #### Accessing the Application on Minikube:
+   This section take an overview of how I exposed and accessed my app on the k8s cluster
+
    1. ##### Setup DNS Mapping:
       - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs.
 
@@ -168,6 +170,7 @@ Here's how it works:
       Navigate to `http://localhost:4173` to access the frontend.
 
    3.  ##### Accessing the Ingress Service:
+        
        -  Run the following command to forward port 80 on your local machine to the port used by the LoadBalancer Ingress service:
        ```
        kubectl port-forward svc/ingress-nginx-controller 80:80
