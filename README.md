@@ -149,7 +149,7 @@ Here's how it works:
       - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
      
    #### Accessing the Application on Minikube:
-   This section take an overview of how I exposed and accessed my app on the k8s cluster
+   This section provides an overview of how I exposed and accessed the application on  a Minikube cluster.
 
    1. ##### Setup DNS Mapping:
       - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs.
