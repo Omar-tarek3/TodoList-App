@@ -124,7 +124,7 @@ Here's how it works:
    1.  ##### **Frontend Sends Request:**
 
         - The user interacts with the frontend application and triggers an action that sends an HTTP-request to an API endpoint.
-        - This request is resolved by DNS and sent to the specified IP where the ingress controller is running.
+        - This request is resolved by DNS and sent to the IP where the ingress controller is running.
 
    2. ##### **Ingress Service:**
        - NGINX Ingress controller processes the request and routes it to the `backend-svc` as defined in the Ingress resource rules.
