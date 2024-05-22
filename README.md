@@ -176,5 +176,17 @@ Here's how it works:
        kubectl port-forward svc/ingress-nginx-controller 80:80
        ```
        - This command will make the Ingress controller accessible at `http://localhost:80`
+4. ### Argo CD
+   This section provide overview of setting up and configuring argo
+   #### Setup
+   name sapce
+   ```
+   install argo helm
+   ```
+   #### Application.yaml
+   - configure 
+   - add within the k8s folder
+   - apply  in the argo namespace
+   
 
 
