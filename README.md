@@ -167,7 +167,7 @@ Here's how it works:
       ```
        kubectl port-forward svc/frontend-svc 4173:4173
       ```
-      Navigate to `http://localhost:4173` to access the frontend.
+      - Navigate to `http://localhost:4173` to access the frontend.
 
    3.  ##### Accessing the Ingress Service:
         
@@ -175,6 +175,6 @@ Here's how it works:
        ```
        kubectl port-forward svc/ingress-nginx-controller 80:80
        ```
-       This command will make the Ingress controller accessible at `http://localhost:80`
+       - This command will make the Ingress controller accessible at `http://localhost:80`
 
 
