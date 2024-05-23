@@ -68,7 +68,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    - Navigate to your working directory , then execute Docker Compose command:
        ```
-      docker compose -f <your-file-name> up 
+      docker compose -f <your-composeFile-name> up 
        ```
 
    #### Access the application:  
