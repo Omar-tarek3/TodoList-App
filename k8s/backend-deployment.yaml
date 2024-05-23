@@ -48,7 +48,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress-svc
-  namespace: default
+  namespace: k8-deployment
 spec:
   ingressClassName: nginx
   rules:
