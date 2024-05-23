@@ -148,7 +148,7 @@ Here's how it works:
          - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
    
       
-   #### Accessing the Application on Minikube:
+   #### Accessing the Application:
    This section provides an overview of how I exposed and accessed the application on  a Minikube cluster.
 
       1. ##### Setup DNS Mapping:
