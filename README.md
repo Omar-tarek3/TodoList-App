@@ -113,61 +113,61 @@ Here's how it works:
 
    #### Cluster Architecture:
       Kubernetes cluster runs on local development environment using **Minikube**. I also installed **NGINX Ingress Controller** using Helm to manage external access. The application is deployed on the Kubernetes cluster using the manifests located in the `K8s` directory.
-      <!-- - **`frontend-deployment.yaml`:** Frontend Deployment object to ensure a specified number of replicas are running,and NodePort service for allowing external traffic to reach it via a specific port on the Minikube node.
-      - **`backend-deployment.yaml`:** Backend Deployment object to ensure a specified number of replicas are running. A ClusterIP service for internal exposeing. An Ingress resource the for setting rules and filtering on the incoming tarffic and exposing api endpoints.
-      - **`database-statefulset.yaml`:** deploymetn and nodeport for -->
 
-![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
+   ![K8s-architecture](https://github.com/Omar-tarek3/Assets/blob/master/K8s-archi-2.png)
  
    Here's a breakdown of how a request travels through the Kubernetes cluster from the frontend to the database. We can outline it step-by-step, emphasizing the role of each component:
 
-   1.  ##### **Frontend Sends Request:**
+      1.  ##### **Frontend Sends Request:**
 
-        - The user interacts with the frontend application and triggers an action that sends an HTTP-request to an API endpoint.
-        - This request is resolved by DNS and sent to the IP where the ingress controller is running.
+           -  The user interacts with the frontend application and triggers an action that sends an HTTP-request to an API endpoint.
 
-   2. ##### **Ingress Service:**
-       - NGINX Ingress controller processes the request and routes it to the `backend-svc` as defined in the Ingress resource rules.
+            - This request is resolved by DNS and sent to the IP where the ingress controller is running.
 
-   3. ##### **Backend Service:**
+      2. ##### **Ingress Service:**
+          - NGINX Ingress controller processes the request and routes it to the `backend-svc` as defined in the Ingress resource rules.
 
-       - The `backend-svc` receives the request and forwards it to the to the pods that are part of the `backend-deployment` where it performs the requested CRUD operations.
+      3. ##### **Backend Service:**
 
-   5. ##### **Communication with Database Service:**
+         - The `backend-svc` receives the request and forwards it to the to the pods that are part of the `backend-deployment` where it performs the requested CRUD operations.
 
-      - The `backend-svc` communicates internally with the `database-svc` allowing the webserver to reach the MySQL database.
+      5. ##### **Communication with Database Service:**
 
-   6. ##### **Database Service and MySQL Database:**
+         - The `backend-svc` communicates internally with the `database-svc` allowing the webserver to reach the MySQL database.
 
-      - The `database-svc` forwards the query to the `database-statefulset` where actual MySQL database pod runs.
-      - MySQL processes the query, performing the requested database operations (e.g., retrieving, inserting, updating, or deleting records).
+      6. ##### **Database Service and MySQL Database:**
 
-   7. ##### **Persistent Storage:**
+         - The `database-svc` forwards the query to the `database-statefulset` where actual MySQL database pod runs.
+         - MySQL processes the query, performing the requested database operations (e.g., retrieving, inserting, updating, or deleting records).
 
-      - The MySQL database request storage using Persistent Volume Claims `PVC`  with the specified requirements, and refers to the `fast` StorageClass to determine how the storage should be provisioned.
+      7. ##### **Persistent Storage:**
 
-      - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
-     
+         - The MySQL database request storage using Persistent Volume Claims `PVC`  with the specified requirements, and refers to the `fast` StorageClass to determine how the storage should be provisioned.
+
+         - When the PVC `mysql-pvc` is created, Kubernetes looks for the `fast` StorageClass and uses the `k8s.io/minikube-hostpath` provisioner to create a PV and bound it to the PVC.
+   
+      
    #### Accessing the Application on Minikube:
    This section provides an overview of how I exposed and accessed the application on  a Minikube cluster.
 
-   1. ##### Setup DNS Mapping:
-      - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs.
+      1. ##### Setup DNS Mapping:
+         - I added an entery at `C:\Windows\System32\drivers\etc\hosts` file to map the app name `todolist.app.com` to the IP `127.0.0.1` where the Ingress controller runs.
 
-      - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
+         - For example, to retrieve the todo lists, you need to access the API endpoint at `http://todolist.app.com/TodoList`. You may Refer to Axios requests in `Frontend/src/App.jsx` for further details.
 
-      ```
-      #C:\Windows\System32\drivers\etc\hosts entery
-      127.0.0.1 todolist.app.com
-      ``` 
+         ```
+         #C:\Windows\System32\drivers\etc\hosts entery
+         127.0.0.1 todolist.app.com
+         ``` 
 
-   2. ##### Access the Frontend:
-      -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
+     2. ##### Access the Frontend:
+         -  Run the following command to forward port 4173 on your local machine to the port used by the `frontend-svc` service:
 
-      ```
-       kubectl port-forward svc/frontend-svc 4173:4173
-      ```
-      - Navigate to `http://localhost:4173` to access the frontend.
+         ```
+          kubectl port-forward svc/frontend-svc 4173:4173
+         ```
+         -  Navigate to `http://localhost:4173` to access the frontend.
+   
 
    3.  ##### Accessing the Ingress Service:
         
