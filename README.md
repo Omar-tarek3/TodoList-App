@@ -184,7 +184,20 @@ Here's how it works:
    install argo helm
    ```
    #### Application.yaml
-   - configure 
+   - configure
+   ```
+   kubectl create namespace argocd
+
+   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+   ```
+   ```
+   kubectl port-forward -n argocd svc argocd-server 8083:443
+   ```
+
+   ```
+   kubectl get secret argocd-initial-admin-secret -n argocd -o yaml 
+   ```
+
    - add within the k8s folder
    - apply  in the argo namespace
    
