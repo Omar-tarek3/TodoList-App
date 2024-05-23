@@ -65,10 +65,11 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    #### Running the Application:
    - Copy the `docker-compose.yaml` file located at the app's root directory
-   - Run Docker Compose command at your working directory:
-    ```
-    docker compose -f <your-file-name> up 
-    ```
+
+   - Navigate to your working directory , then execute Docker Compose command:
+       ```
+      docker compose -f <your-file-name> up 
+       ```
 
    #### Access the application:  
    - **Frontend:** Access the frontend at `http://localhost:4173`.
@@ -91,17 +92,17 @@ Here's how it works:
    - Copy the `Jenkins/dockerfile` and the `jenkins-compose.yaml` files.
    - Replace ` context: ./Jenkins`section in the `jenkins-compose.yaml` with the path to your dockerfile.
    - Run Docker Compose command at your working directory: 
-   ```
-   docker compose -f <your-composeFile-name> up
-    ```
+       ```
+      docker compose -f <your-composeFile-name> up
+       ```
    - Execute commands within the jenkins container as root-user:
-    ```
-    docker exec -it -u 0 <container-id> bash 
-    ```
+      ```
+      docker exec -it -u 0 <container-id> bash 
+       ```
    - Adjust Docker-Socket permissions so that Jenkins can communicate with the Docker daemon:
-    ```
-    chmod 666 /var/run/docker.sock
-    ```
+       ```
+       chmod 666 /var/run/docker.sock
+       ```
 
 
 ![Jenkins](https://github.com/Omar-tarek3/Assets/blob/master/jenkins.png)
