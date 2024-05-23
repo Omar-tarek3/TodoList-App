@@ -177,29 +177,38 @@ Here's how it works:
        ```
        - This command will make the Ingress controller accessible at `http://localhost:80`
 4. ### Argo CD
-   This section provide overview of setting up and configuring argo
-   #### Setup
-   name sapce
-   ```
-   install argo helm
-   ```
-   #### Application.yaml
-   - configure
-   ```
-   kubectl create namespace argocd
+   This section provides an overview of setting up and configuring Argo.
+   
+   - Create `argocd` namespace and apply the Argo CD installation manifest:
+     ```
+      kubectl create namespace argocd
 
-   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-   ```
-   ```
-   kubectl port-forward -n argocd svc argocd-server 8083:443
-   ```
+      kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      ```
+   - Access the Argo  UI:
+      -  Forward the Argo server port to your local machine.
+      
+      ```
+      kubectl port-forward -n argocd svc/argocd-server 8083:443
+      ```
+      - Navigate to `http://localhost:8083` to access the Argo UI.
+   
+   - Configure an application manifest to hold your Argo configuration and apply this manifest to your local Kubernetes cluster:
+   
+     ```
+     kubectl apply -f k8s/application.yaml
+     ```
+     Refer to `k8s/application.yaml` for an example
+   app.yaml
 
-   ```
-   kubectl get secret argocd-initial-admin-secret -n argocd -o yaml 
-   ```
+   
+![Argo-Home](https://github.com/Omar-tarek3/Assets/blob/master/home.png)
 
-   - add within the k8s folder
-   - apply  in the argo namespace
+![Argo-Home](https://github.com/Omar-tarek3/Assets/blob/master/argo-svc.png)
+
+![Argo-Home](https://github.com/Omar-tarek3/Assets/blob/master/argo-archi.png)
+
+
    
 
 
