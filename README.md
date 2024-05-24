@@ -28,7 +28,7 @@ The TodoList Microservices Application is a comprehensive end-to-end project tha
 - **GitOps:** ArgoCD
 - **Version Control:** Git/GitHub
 
-## Architecture
+## App Architecture
 
 ![TodoList Arhcitecture](https://github.com/Omar-tarek3/Assets/blob/master/TodoList-pipeline.png)
 
