@@ -5,7 +5,7 @@ The TodoList Microservices Application is a comprehensive end-to-end project tha
 ## Table of Contents
 
 1. [Technology Stack](#technology-stack)
-2. [Architecture](#architecture)
+2. [App Architecture](#app-architecture)
 3. [Features](#features)
 4. [App Overview](#app-overview)
    1. [Docker Compose](#docker-compose)
