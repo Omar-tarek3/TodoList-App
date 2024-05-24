@@ -9,14 +9,10 @@ The TodoList Microservices Application is a comprehensive end-to-end project tha
 3. [Features](#features)
 4. [App Overview](#app-overview)
    1. [Docker Compose](#docker-compose)
-      - [Running the Application](#running-the-application)
-      - [Access the application](#access-the-application)
    2. [Jenkins Setup](#jenkins-setup)
    3. [Kubernetes](#kubernetes)
       - [Cluster Architecture](#cluster-architecture)
       - [Accessing the Application](#accessing-the-application)
-      - [Cluster Architecture](#cluster-architecture)
-      - [Cluster Architecture](#cluster-architecture)
    4. [Argo CD](#argo-cd)
 
 
