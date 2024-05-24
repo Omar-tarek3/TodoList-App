@@ -6,10 +6,6 @@ The TodoList Microservices Application is a comprehensive end-to-end project tha
 
 1. [Technology Stack](#technology-stack)
 2. [Architecture](#architecture)
-    - [Developer Pushes Changes](#developer-pushes-changes)
-    - [Webhook ](#webhook-triggers-jenkins-pipeline)
-    - [Jenkins Pipeline ](#webhook-triggers-jenkins-pipeline)
-    - [Argo CD ](#argocd-deploys-to-kubernetes)
 3. [Features](#features)
 4. [App Overview](#app-overview)
    1. [Docker Compose](#docker-compose)
