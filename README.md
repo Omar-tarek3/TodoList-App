@@ -2,6 +2,27 @@
 
 The TodoList Microservices Application is a comprehensive end-to-end project that embodies a modern approach to software development and deployment. It comprises a frontend built with React, a backend Node.js Express, and a MySQL database considering DevOps best practices and automated CI/CD pipelines for efficient and scalable application delivery.
 
+## Table of Contents
+
+1. [Technology Stack](#technology-stack)
+2. [Architecture](#architecture)
+    - [Developer Pushes Changes](#developer-pushes-changes)
+    - [Webhook ](#webhook-triggers-jenkins-pipeline)
+    - [Jenkins Pipeline ](#webhook-triggers-jenkins-pipeline)
+    - [Argo CD ](#argocd-deploys-to-kubernetes)
+3. [Features](#features)
+4. [App Overview](#app-overview)
+   1. [Docker Compose](#docker-compose)
+      - [Running the Application](#running-the-application)
+      - [Access the application](#access-the-application)
+   2. [Jenkins Setup](#jenkins-setup)
+   3. [Kubernetes](#kubernetes)
+      - [Cluster Architecture](#cluster-architecture)
+      - [Accessing the Application](#accessing-the-application)
+      - [Cluster Architecture](#cluster-architecture)
+      - [Cluster Architecture](#cluster-architecture)
+   4. [Argo CD](#argo-cd)
+
 
 
 ## Technology Stack
@@ -24,13 +45,13 @@ The TodoList Microservices Application is a comprehensive end-to-end project tha
 
 The CI/CD process ensures that any changes made by developers are automatically integrated, built, and deployed to the Kubernetes cluster without manual intervention. Here's how it works:
 
-1. **Developer Pushes Changes**: 
+1. ### **Developer Pushes Changes**: 
    - A developer pushes code changes to the GitHub repository.
 
-2. **Webhook Event Triggers Jenkins Pipeline**: 
+2. ### **Webhook Triggers Jenkins Pipeline**: 
    - A GitHub webhook is configured to trigger a Jenkins pipeline whenever changes are pushed by the developer to the repository.
 
-3. **Jenkins Pipeline**:
+3. ### **Jenkins Pipeline**:
    - **Build Stage**: Jenkins pulls the latest code from the GitHub repository.
    - **Build Docker Images**: Jenkins builds Docker images for the frontend, backend, and database services.
    - **Push Docker Images to DockerHub**: Jenkins pushes the built Docker images to DockerHub making them accessible for deployment in Kubernetes.
@@ -39,7 +60,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
    - **Push Changes to GitHub Repo**: Jenkins pushes the updated Kubernetes manifest files back to the GitHub repository.
 
-4. **ArgoCD Deploys to Kubernetes**:
+4. ### **ArgoCD Deploys to Kubernetes**:
    - ArgoCD monitors the `K8s` directory in GitHub repository for changes.
    - When changes are detected, ArgoCD pulls the updated manifest files.
    - ArgoCD applies the changes to the local Kubernetes cluster, deploying the new application version.
@@ -59,7 +80,7 @@ The CI/CD process ensures that any changes made by developers are automatically 
 
 
 
-## App overview 
+## App Overview 
 1. ### Docker Compose
     You can have a quick set up and run to the entire application stack to view the app components and interact with it. Ensure you have Docker and Docker Compose installed on your machine.
 
