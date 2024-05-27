@@ -2,7 +2,7 @@
 
 The TodoList Microservices Application is a comprehensive end-to-end project that embodies a modern approach to software development and deployment. It comprises a frontend built with React, a backend Node.js Express, and a MySQL database considering DevOps best practices and automated CI/CD pipelines for efficient and scalable application delivery.
 
-## Table of Contents
+## Table of Contentss
 
 1. [Technology Stack](#technology-stack)
 2. [App Architecture](#app-architecture)
